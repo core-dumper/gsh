@@ -10,10 +10,6 @@
 #define DELIM " \t\n\r"
 
 
-//char **split_line(char *line);
-//void cd(char *path);
-//void gexit();
-
 
 char **split_line(char *line){
 	int buffsize = BUFF_S , position = 0;
