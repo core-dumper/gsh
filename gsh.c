@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <errno.h>
 
 #define BUFF_S 1024
 #define DELIM " \t\n\r"
@@ -62,10 +63,10 @@ int main(){
 		add_history(line);
 		char **args=split_line(line);
 
-			if(strcmp(args[0],"cd")==0){
-				cd(args[1]);
-				free(line);
-				continue;}
+		if(strcmp(args[0],"cd")==0){
+			cd(args[1]);
+			free(line);
+			continue;}
 
 
 			pid_t cpid = fork();
